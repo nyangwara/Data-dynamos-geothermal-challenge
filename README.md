@@ -1,6 +1,6 @@
 # Geothermal-Based Heating and Cooling System for an Urban District in the Netherlands
 
-**Technical Report — Draft v01**
+**Technical Report **
 
 A feasibility study integrating subsurface assessment of the Rotliegend Slochteren reservoir with surface system design for a mixed-use district near the USP (Utrecht region). The recommended development is a single geothermal doublet (BLT-01 producer + a new well USP-01 as injector) augmented with two heat pumps, an absorption chiller, a peaking electric chiller, and Aquifer Thermal Energy Storage (ATES). The system delivers 10.7 MWth of heating and 6.0 MWth of cooling at a Levelized Cost of Energy of €122/MWh (P50; P10–P90 range €100–€148), avoiding approximately 2,600 tCO₂ per year.
 
@@ -79,11 +79,15 @@ Petrophysical interpretation of the LAS data over the true Slochteren intervals 
 
 Cross-validating against the ThermoGIS regional model exposes a critical local-vs-regional discrepancy. ThermoGIS reports PKP-01 effective porosity at 9% with an NTG of 0.95; the LAS-derived values are 1.1% and 0.03. The actual Slochteren interval at PKP-01 is dominated by shale (mean GR 65 gAPI, V_sh = 0.19), with virtually no net pay. The regional model averages out this local depletion. A feasibility study relying on ThermoGIS alone would have nominated PKP-01 as a viable candidate — a costly mistake.
 
+![Four-well Slochteren comparison. PKP-01 has 1.1% effective porosity and almost no net pay.](05_visualizations/well_logs/four_wells_comparison_v01.png)
+
 This finding has methodological implications beyond this project: regional geothermal models are useful for portfolio screening but should not be used in isolation for site selection. The LAS-derived numbers should always be the basis for go/no-go decisions on specific wells. The AI-assisted workflow described in Section 7 makes this cross-validation automatic at scale.
 
 ### 3.2 Well ranking and recommended development
 
-Combining the LAS-derived petrophysics with ThermoGIS deliverability values and surface-distance constraints, the four wells are ranked:
+Combining the LAS-derived petrophysics with ThermoGIS deliverability values and surface-distance constraints, the four wells are ranked. BLT-01 sits about 2 km from the demand centre; PKP-01 is more than 20 km away.
+
+![Well locations and the USP. BLT-01 and the proposed injector USP-01 are next to the demand centre.](05_visualizations/maps/well_locations_v01.png)
 
 | Rank | Well | k×h | Power P50 | Distance to USP | Verdict |
 |---|---|---|---|---|---|
@@ -99,6 +103,8 @@ The recommended development is a single doublet centered on BLT-01:
 - **Producer:** BLT-01, used as-is with a recompletion workover. Produces 105 m³/h of brine at 77 °C, with return-side temperature of 35 °C after the primary heat exchanger.
 - **Injector:** USP-01, a new well to be drilled at X = 141,278, Y = 455,412 (RD New) — 1.5 km from BLT-01 and 0.5 km from the USP. USP-01 is targeted at the Slochteren interval; inverse-distance interpolation against BLT-01 (weight 0.84) and JUT-01 (weight 0.16) predicts a top at 1,830 m TVD, 123 m thickness, 11.4% porosity, and 75 mD permeability.
 
+![Recommended doublet. BLT-01 produces; USP-01 injects 1.5 km away and 0.5 km from the plant.](05_visualizations/maps/doublet_layout_v01.png)
+
 USP-01 takes the injector role rather than the producer role specifically because it is the new and therefore higher-uncertainty well. Using BLT-01 (proven at 5.1 MWth) as the producer locks in the baseline output regardless of how USP-01 performs against its predicted values; the new well only has to accept water at acceptable wellhead pressures, which is a lower bar.
 
 A second doublet (drilling two more wells to add another 5 MW geothermal) was considered and rejected on capital-cost grounds. The surface system described in Section 4 closes the gap between geothermal direct output and demand at a lower CapEx per MW than a second well pair.
@@ -113,7 +119,9 @@ With φ = 0.11, h = 122 m, r = 1,500 m, and q = 105/3600 m³/s, the plug-flow po
 
 ### 3.4 Geological cross-section
 
-A SW-NE transect through the four wells shows the reservoir architecture (figure: cross_section_sw_ne_v01.png). The Slochteren top dips approximately 200 m from JUT-01 in the southwest to BLT-01 in the northeast. EVD-01 to the south is intermediate. PKP-01 to the west is significantly deeper, supporting the interpretation that it sits in a separate fault block.
+A SW-NE transect through the four wells shows the reservoir architecture. The Slochteren top dips approximately 200 m from JUT-01 in the southwest to BLT-01 in the northeast. EVD-01 to the south is intermediate. PKP-01 to the west is significantly deeper, supporting the interpretation that it sits in a separate fault block.
+
+![SW-NE cross-section of the Slochteren. USP-01 sits on the same fairway as BLT-01; PKP-01 is off-section in a deeper block.](05_visualizations/cross_sections/cross_section_sw_ne_v01.png)
 
 The proposed USP-01 location is on the structurally simple part of the fairway, between BLT-01 and the USP, avoiding the deeper or faulted regions further west.
 
@@ -123,7 +131,9 @@ The proposed USP-01 location is on the structurally simple part of the fairway, 
 
 ### 4.1 Topology overview
 
-The surface system is a hybrid configuration with five integrated subsystems (figure: process_flow_diagram_v01.svg):
+The surface system is a hybrid configuration with five integrated subsystems:
+
+![Hybrid surface system. Direct geothermal heat is boosted by two heat pumps, an absorption chiller, an electric chiller, and ATES.](05_visualizations/system_diagrams/process_flow_diagram_v01.png)
 
 1. **Geothermal doublet** delivers 5.1 MWth direct heat from the Slochteren reservoir.
 2. **Primary heat exchanger (HX-1)** transfers heat from the corrosive brine to a clean closed-loop district water circuit.
@@ -173,6 +183,8 @@ Annual energy flows assume 2,400 full-load equivalent hours for heating and 1,50
 - Electricity input (HPs + chillers + pumps): 8,750 MWh/yr
 - System SPF: 31,500 / 8,750 = **3.6**
 
+![Annual energy balance. Heating and cooling delivered outweigh electricity input, for a system SPF of 3.6.](05_visualizations/charts/energy_balance_v01.png)
+
 The SPF is approximately 25% higher than an equivalent air-source heat pump fleet covering the same demand (typical SPF 2.5–3.0). This is the economic case for the geothermal investment over an all-electric alternative.
 
 CO₂ avoidance versus a natural-gas heating baseline (assuming gas emits 0.20 kgCO₂/kWh of useful heat and the NL grid 2026 emits 0.25 kgCO₂/kWh of electricity):
@@ -200,6 +212,8 @@ Total CapEx is €23.7 million, broken down by subsystem:
 
 Drilling cost (€5M for USP-01) is the largest single line item. Surface plant components are the next largest cluster.
 
+![Capital expenditure breakdown. Surface plant and subsurface drilling are the two largest blocks of the €23.7 million total.](05_visualizations/charts/capex_breakdown_v01.png)
+
 ### 5.2 Operating expenditure
 
 Annual OpEx is €1.82 million:
@@ -224,7 +238,7 @@ This sits in the middle of the NL hybrid-geothermal benchmark range of €80–�
 
 ### 5.4 Sensitivity and uncertainty
 
-One-at-a-time sensitivity analysis, computed directly from the LCoE model (`03_analysis/scripts/lcoe_model.py` — the same model the Monte Carlo uses, so the two analyses cannot drift apart), gives the following LCoE swings (figure: lcoe_sensitivity_tornado_v01.png), ranked largest first:
+One-at-a-time sensitivity analysis, computed directly from the LCoE model (`03_analysis/scripts/lcoe_model.py` — the same model the Monte Carlo uses, so the two analyses cannot drift apart), gives the following LCoE swings, ranked largest first:
 
 | Input | Low-case ΔLCoE | High-case ΔLCoE |
 |---|---|---|
@@ -236,11 +250,15 @@ One-at-a-time sensitivity analysis, computed directly from the LCoE model (`03_a
 | USP-01 doublet flow (±20%) | +€2.4/MWh | −€0.5/MWh |
 | HP-1 COP (2.8 vs 4.2) | +€1.9/MWh | −€1.2/MWh |
 
+![LCoE sensitivity. Heating utilisation moves the cost by about €20/MWh; doublet flow rate barely moves it.](05_visualizations/charts/lcoe_sensitivity_tornado_v01.png)
+
 Heating utilisation (FLEH) is by far the dominant sensitivity: the project is fixed-cost heavy, so the number of full-load-equivalent hours over which those capital and fixed costs are spread moves the LCoE more than any single technical input. Discount rate and project lifetime — both financing-side levers — are the next most important.
 
 Within a ±20% band the doublet flow rate is only a minor LCoE lever (≈ +€2.4/MWh in the downside): the system is designed to deliver a fixed heating peak, so a flow shortfall is made up efficiently by the heat pumps (extra electricity at COP 3.5–4.0) while doublet pumping electricity simultaneously falls, and the two effects largely offset. The material USP-01 risk is therefore not a gradual LCoE gradient but a *discontinuous* one — failing to deliver the peak, or needing a second doublet — which is treated as a scenario in §8 rather than as a ±20% sensitivity. (An earlier draft of this chart carried hand-entered values that made USP-01 the dominant line at +€10/MWh; those are superseded by the model-computed figures above.)
 
-A 10,000-run Monte Carlo simulation propagating uncertainty in flow rate, discount rate, CapEx, electricity price, and FLEH gives a distribution with P10/P50/P90 values of €100/€123/€148/MWh (figure: lcoe_monte_carlo_v01.png). The P90 just exceeds the upper bound of the NL benchmark range; the probability of an LCoE worse than €140/MWh is approximately 25%, which should be flagged as a meaningful downside risk in the investment case.
+A 10,000-run Monte Carlo simulation propagating uncertainty in flow rate, discount rate, CapEx, electricity price, and FLEH gives a distribution with P10/P50/P90 values of €100/€123/€148/MWh. The P90 just exceeds the upper bound of the NL benchmark range; the probability of an LCoE worse than €140/MWh is approximately 25%, which should be flagged as a meaningful downside risk in the investment case.
+
+![LCoE Monte Carlo. The P50 is €123/MWh, inside the Dutch hybrid-geothermal benchmark band.](05_visualizations/charts/lcoe_monte_carlo_v01.png)
 
 ---
 
