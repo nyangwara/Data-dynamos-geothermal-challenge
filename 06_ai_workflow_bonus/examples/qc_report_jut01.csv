@@ -1,0 +1,4 @@
+curve,n_anomalies,pct_of_valid,anom_min,anom_max,curve_normal_min,curve_normal_max
+GR,224,1.0,2.5127,173.8316,7.0551,108.0137
+DT,193,0.95,39.9616,2782876.956,43.9772,184.9386
+RHOB,158,1.0,1.4294,7584554.7886,1.9544,3.0094

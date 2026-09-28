@@ -1,0 +1,5 @@
+well_id,slochteren_top_tvd_m,slochteren_base_tvd_m,thickness_tvd_m,gr_mean_gapi,vshale_mean_frac,phi_total_frac,phi_eff_frac,ntg_log_derived,n_log_samples
+BLT-01,1862.49,1984.87,122.38,49.0,0.1011,0.1436,0.1137,0.9278,1689
+EVD-01,1782.75,1859.59,76.84,28.5,0.0186,0.0837,0.0804,0.8167,780
+JUT-01,1655.27,1781.02,125.75,24.32,0.0049,0.1106,0.1092,0.8577,836
+PKP-01,2207.25,2271.65,64.4,65.14,0.1885,0.0537,0.0108,0.0315,730

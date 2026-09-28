@@ -1,0 +1,10 @@
+# Pinned to the versions this project was audited/reproduced against (Python 3.13/3.14).
+# Reproduce all processed datasets with:  python reproduce_all.py
+lasio==0.32
+pandas==3.0.1
+numpy==2.4.1
+scipy==1.17.1
+scikit-learn==1.9.0
+openpyxl==3.1.5
+matplotlib==3.10.8
+jupyter>=1.0

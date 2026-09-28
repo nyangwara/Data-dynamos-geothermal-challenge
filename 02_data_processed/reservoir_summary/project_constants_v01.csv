@@ -1,0 +1,7 @@
+parameter,value,unit,source
+usp_x_rd_new,141171.0,m,triangulated from 4 wells
+usp_y_rd_new,454890.0,m,triangulated from 4 wells
+geothermal_gradient_C_per_km,31.7,C/km,"derived from BLT-01 BHT 167F (75C) at TVD 2051 m (=2123 m MD), surface 10C"
+surface_temperature_C,10.0,C,NL annual avg
+usp01_x_rd_new,141278.0,m,proposed new well (injector for BLT-01 doublet)
+usp01_y_rd_new,455412.0,m,proposed new well

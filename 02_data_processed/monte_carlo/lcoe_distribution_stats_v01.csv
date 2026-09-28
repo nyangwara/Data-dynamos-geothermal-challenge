@@ -1,0 +1,11 @@
+metric,lcoe_eur_per_mwh
+mean,124.0
+std,18.5
+P10,100.7
+P25,111.0
+P50,123.0
+P75,135.7
+P90,148.1
+min,63.9
+max,215.3
+n_simulations,10000.0

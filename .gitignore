@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+.mypy_cache/
+
+# Temp / scratch
+_audit_*
+*.tmp
+repro_*/
+
+# Office lock files
+~$*
+
+# Stay local. The technical report is published once, as README.md.
+07_deliverables/
+CONTENTS.md
